@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Return user data without password hash
-    const { passwordHash: _, ...userWithoutPassword } = user
+    const { passwordHash: _passwordHash, ...userWithoutPassword } = user
     return NextResponse.json({ user: userWithoutPassword })
   } catch (error) {
     console.error('Get user error:', error)
