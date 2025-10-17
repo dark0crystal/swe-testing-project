@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { waterLogSchema, type WaterLogFormData } from '@/lib/validations'
 import { formatAmount, getProgressPercentage, getProgressColor } from '@/lib/water-calculations'
 import { useAuth } from '@/contexts/AuthContext'
-import { Droplets, Plus, TrendingUp } from 'lucide-react'
+import { Droplets, Plus, TrendingUp, X } from 'lucide-react'
 
 interface UserProfile {
   id: string
@@ -34,7 +34,7 @@ interface WaterTrackerProps {
   onClose?: () => void
 }
 
-export default function WaterTracker({ userProfile, onLogAdded }: WaterTrackerProps) {
+export default function WaterTracker({ userProfile, onLogAdded, onClose }: WaterTrackerProps) {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [todayLogs, setTodayLogs] = useState<WaterLog[]>([])
@@ -110,7 +110,18 @@ export default function WaterTracker({ userProfile, onLogAdded }: WaterTrackerPr
   const progressColor = getProgressColor(progressPercentage)
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6">
+    <div className="bg-white rounded-lg shadow-lg p-6 relative">
+      {/* Close Button */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          aria-label="Close water tracker"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      )}
+      
       <div className="text-center mb-6">
         <h2 className="text-2xl font-bold text-gray-800 mb-2">Today&apos;s Water Intake</h2>
         <div className="flex items-center justify-center gap-2 text-gray-600">
@@ -169,7 +180,7 @@ export default function WaterTracker({ userProfile, onLogAdded }: WaterTrackerPr
             id="amount"
             min="1"
             max="1000"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Enter amount in ml"
           />
           {errors.amount && (

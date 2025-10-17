@@ -2,13 +2,25 @@
 
 import { createContext, useContext, useEffect, useState } from 'react'
 
+interface UserProfile {
+  id: string
+  userId: string
+  name: string
+  weight: number
+  activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active'
+  weatherCondition: 'cool' | 'mild' | 'warm' | 'hot'
+  dailyGoal: number
+  createdAt: string
+  updatedAt: string
+}
+
 interface User {
   id: string
   name: string
   username: string
   email: string
   createdAt: string
-  profile?: any
+  profile?: UserProfile
 }
 
 interface AuthContextType {
@@ -75,7 +87,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } else {
         return { error: data.error || 'Registration failed' }
       }
-    } catch (error) {
+    } catch {
       return { error: 'Network error' }
     }
   }
@@ -98,7 +110,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       } else {
         return { error: data.error || 'Login failed' }
       }
-    } catch (error) {
+    } catch {
       return { error: 'Network error' }
     }
   }

@@ -9,14 +9,6 @@ export async function POST(request: NextRequest) {
       where: { id: userId },
       include: {
         profile: true
-      },
-      select: {
-        id: true,
-        name: true,
-        username: true,
-        email: true,
-        createdAt: true,
-        profile: true
       }
     })
 
@@ -27,7 +19,9 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    return NextResponse.json({ user })
+    // Return user data without password hash
+    const { passwordHash: _, ...userWithoutPassword } = user
+    return NextResponse.json({ user: userWithoutPassword })
   } catch (error) {
     console.error('Get user error:', error)
     return NextResponse.json(

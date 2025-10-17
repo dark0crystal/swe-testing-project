@@ -161,7 +161,11 @@ export default function Home() {
       {/* Floating Water Tracker - Toggleable */}
       {showWaterTracker && (
         <div className="fixed bottom-20 right-6 w-80 z-40">
-          <WaterTracker userProfile={userProfile} onLogAdded={refreshLogs} />
+          <WaterTracker 
+            userProfile={userProfile} 
+            onLogAdded={refreshLogs} 
+            onClose={() => setShowWaterTracker(false)}
+          />
         </div>
       )}
     </div>

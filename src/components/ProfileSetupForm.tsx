@@ -92,7 +92,7 @@ export default function ProfileSetupForm({ onComplete }: ProfileSetupFormProps) 
             step="0.1"
             min="30"
             max="300"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Enter your weight"
           />
           {errors.weight && (
@@ -107,7 +107,7 @@ export default function ProfileSetupForm({ onComplete }: ProfileSetupFormProps) 
           <select
             {...register('activityLevel')}
             id="activityLevel"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
           >
             <option value="">Select your activity level</option>
             <option value="sedentary">Sedentary (little to no exercise)</option>
@@ -128,7 +128,7 @@ export default function ProfileSetupForm({ onComplete }: ProfileSetupFormProps) 
           <select
             {...register('weatherCondition')}
             id="weatherCondition"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
           >
             <option value="">Select current weather</option>
             <option value="cool">Cool (below 20°C)</option>

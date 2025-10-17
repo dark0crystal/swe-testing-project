@@ -59,7 +59,7 @@ export default function LoginForm({ onSuccess, onSwitchToRegister }: LoginFormPr
             {...register('email')}
             type="email"
             id="email"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Enter your email"
           />
           {errors.email && (
@@ -75,7 +75,7 @@ export default function LoginForm({ onSuccess, onSwitchToRegister }: LoginFormPr
             {...register('password')}
             type="password"
             id="password"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Enter your password"
           />
           {errors.password && (

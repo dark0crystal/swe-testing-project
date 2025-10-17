@@ -59,7 +59,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin }: RegisterFor
             {...register('name')}
             type="text"
             id="name"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Enter your full name"
           />
           {errors.name && (
@@ -75,7 +75,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin }: RegisterFor
             {...register('username')}
             type="text"
             id="username"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Choose a username"
           />
           {errors.username && (
@@ -91,7 +91,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin }: RegisterFor
             {...register('email')}
             type="email"
             id="email"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Enter your email"
           />
           {errors.email && (
@@ -107,7 +107,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin }: RegisterFor
             {...register('password')}
             type="password"
             id="password"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Create a password"
           />
           {errors.password && (
@@ -123,7 +123,7 @@ export default function RegisterForm({ onSuccess, onSwitchToLogin }: RegisterFor
             {...register('confirmPassword')}
             type="password"
             id="confirmPassword"
-            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2E7FF] focus:border-transparent transition-colors text-black"
             placeholder="Confirm your password"
           />
           {errors.confirmPassword && (

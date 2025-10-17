@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Return user data (excluding password hash)
-    const { passwordHash, ...userWithoutPassword } = user
+    const { passwordHash: _, ...userWithoutPassword } = user
 
     return NextResponse.json({ user: userWithoutPassword })
   } catch (error) {
